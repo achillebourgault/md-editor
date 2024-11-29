@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg-primary: #0d1117;
+  --bg-secondary: #1a1b26;
+  --border-color: #21262d;
+  --border-hover: #30363d;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --accent-primary: rgb(99 102 241);
+  --accent-secondary: rgb(99 102 241 / 0.15);
+}
+
+body {
+  @apply bg-[var(--bg-primary)] text-[var(--text-primary)];
+}
+
+.gutter {
+  background-color: var(--border-color);
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter:hover {
+  background-color: var(--border-hover);
+}
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+}
+
+.app-drag-region {
+  -webkit-app-region: drag;
+}
+
+.app-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .custom-scrollbar {
+    @apply scrollbar-thin
+           scrollbar-thumb-[#21262d]
+           scrollbar-track-[#0d1117]
+           hover:scrollbar-thumb-[#30363d];
+  }
+}
+
+@layer utilities {
+  .gradient-fade-enter {
+    --opacity: 0;
+    transition: --opacity 0.3s ease-in-out;
+  }
+  
+  .gradient-fade-enter-active {
+    --opacity: 0.15;
+  }
+  
+  .gradient-fade-exit {
+    --opacity: 0.15;
+    transition: --opacity 0.3s ease-in-out;
+  }
+  
+  .gradient-fade-exit-active {
+    --opacity: 0;
+  }
+}
+
+:root.light-mode {
+  color-scheme: light;
+  --bg-primary: 	#FAF9F6;  
+  --bg-secondary: #eae8e3;
+  --border-color: #dcd9d2;
+  --border-hover: #ccc8be;
+  --text-primary: #3c3a38;
+  --text-secondary: #6b6864;
+  --accent-primary: rgb(79 70 229);
+  --accent-secondary: rgb(79 70 229 / 0.1);
+}
+
+:root.light-mode body {
+  @apply bg-[var(--bg-primary)] text-[var(--text-primary)];
+}
+
+:root.light-mode .gutter {
+  background-color: var(--border-color);
+}
+
+:root.light-mode .gutter:hover {
+  background-color: var(--border-hover);
+}
+
+:root.light-mode .preview-container {
+  @apply bg-[var(--bg-primary)] text-[var(--text-primary)];
+}
+
+:root.light-mode button.hover\:bg-\[\#1a1b26\]:hover {
+  @apply hover:bg-[var(--bg-secondary)];
+}
+
+:root.light-mode .border-neutral-800 {
+  @apply border-[var(--border-color)];
+}
+
+:root.light-mode .custom-scrollbar {
+  @apply scrollbar-thin
+         scrollbar-thumb-[#dcd9d2]
+         scrollbar-track-[#f5f4f1]
+         hover:scrollbar-thumb-[#ccc8be];
+}
+
+::selection {
+  background-color: var(--accent-secondary);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--accent-secondary);
+  color: var(--text-primary);
+}
+
+.editor-container ::selection {
+  background-color: var(--accent-secondary);
+  color: var(--text-primary);
+}
+
+.editor-container ::-moz-selection {
+  background-color: var(--accent-secondary);
+  color: var(--text-primary);
+}

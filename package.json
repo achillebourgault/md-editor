@@ -1,0 +1,61 @@
+{
+  "name": "markdown-editor",
+  "description": "Minimalist Markdown Editor",
+  "author": "Achille Bourgault <achille.bourgault@gmail.com>",
+  "private": true,
+  "version": "0.0.1a",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "electron:dev": "vite dev",
+    "electron:build": "npm run clean && vite build && npm run copy-preload && electron-builder",
+    "preview": "vite preview",
+    "clean": "rimraf dist dist-electron release",
+    "copy-preload": "copyfiles -f electron/preload.js dist-electron"
+  },
+  "build": {
+    "appId": "com.markdown.app",
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ],
+    "directories": {
+      "output": "release/${version}"
+    },
+    "asar": true
+  },
+  "dependencies": {
+    "electron-store": "^10.0.0",
+    "lucide-react": "^0.358.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-highlight": "^7.0.1",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "rehype-stringify": "^9.0.0",
+    "remark-emoji": "^5.0.1",
+    "remark-gfm": "^3.0.0",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^10.0.0",
+    "remark-rehype": "^10.0.0",
+    "tailwind-scrollbar": "^3.1.0",
+    "unified": "^10.1.0",
+    "unist-util-visit": "^5.0.0",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "copyfiles": "^2.4.1",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "postcss": "^8.4.49",
+    "rimraf": "^5.0.10",
+    "tailwindcss": "^3.4.15",
+    "vite-plugin-electron": "^0.29.0"
+  }
+}
