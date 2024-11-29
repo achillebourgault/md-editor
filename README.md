@@ -1,4 +1,4 @@
-# MdEditor - Markdown Editor
+# MdEditor - Markdown Editor (Linux & macOs soon)
 
 A modern Markdown editor built with Electron, React, and TypeScript. This application provides a clean and efficient environment for writing Markdown documents with real-time preview.
 
