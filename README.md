@@ -13,7 +13,11 @@ A modern Markdown editor built with Electron, React, and TypeScript. This applic
 - Clean, minimalist interface
 - Light/Dark mode
 
-## Installation
+## Installation (exe)
+
+[Windows installer](https://github.com/achillebourgault/md-editor/releases/tag/0.0.1a)
+
+## Installation from source
 
 ### Prerequisites
 
